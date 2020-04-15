@@ -17,9 +17,13 @@ class Classes
   def self.all
     @@all
   end
+
+  def self.find_by_klass(klass)
+    @@all.select {|c| c.name == klass}
+  end
   
-  def name
-    @name
+  def list_klasses
+    @@all.each {|c| puts c.name}
   end
   
 

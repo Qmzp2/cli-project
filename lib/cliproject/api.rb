@@ -5,10 +5,10 @@ class Api
     
     url ="http://dnd5eapi.co/api/classes/"
     response = HTTParty.get(url)
-    classes = response.parsed_response["results"]
-  classes.each {|c| Classes.new(name: c["name"], index: c["index"], url: c["url"])}
-  binding.pry
-puts Classes.all
+    class_hash = response.parsed_response["results"]
+  class_hash.each {|c| Classes.new(name: c["name"], index: c["index"], url: c["url"])} #makes a class object for each of the 12 classes
+  #get classes
+
   end
   
 end
