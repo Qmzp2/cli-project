@@ -1,12 +1,13 @@
 
 class Api
   
-  def self.get_classy(class_selection)
-    url ="http://dnd5eapi.co/api/classes/#{class_selection}/"
-    # response = Net::HTTP.get(URI(url)) #class example: didnt work
-    r = HTTParty.get(url) #google example, did work. Thanks google!
-    classes = r.parsed_response #doesn't seem to do anything
-    puts classes
+  def self.get_classy
+    
+    url ="http://dnd5eapi.co/api/classes/"
+    response = HTTParty.get(url)
+    classes = response.parsed_response["results"]
+    # classes.each{|class| Class.new}
+puts classes
   end
   
 end
