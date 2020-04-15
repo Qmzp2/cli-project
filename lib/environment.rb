@@ -1,6 +1,7 @@
-#require 'pry'
-#require 'HTTParty'
-#require 'json'
+
+require 'pry'
+require 'httparty'
+require 'json'
 
 require_relative './cliproject/cli'
 require_relative './cliproject/api'
