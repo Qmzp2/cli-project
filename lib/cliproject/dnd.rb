@@ -1,6 +1,6 @@
 
 
-class Class
+class Classes
   attr_accessor :name, :index, :url
   @@all = []
   def initialize(name:, index:, url:)
@@ -10,7 +10,6 @@ class Class
     save
   end
   
-  
   def save
     @@all << self
   end
@@ -19,5 +18,9 @@ class Class
     @@all
   end
   
+  def name
+    @name
+  end
   
+
 end 
