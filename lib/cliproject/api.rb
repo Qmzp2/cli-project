@@ -7,7 +7,7 @@ class Api
     response = HTTParty.get(url)
     classes = response.parsed_response["results"]
   classes.each {|c| Class.new(name: c["name"], index: c["index"], url: c["url"])}
-puts classes
+puts Class.all 
   end
   
 end
