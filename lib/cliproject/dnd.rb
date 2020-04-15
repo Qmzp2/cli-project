@@ -1,7 +1,7 @@
 
 
 class Classes
-  attr_accessor :name, :index, :url
+  attr_accessor :name, :index, :url, :hit_die, :proficiency_choices
   @@all = []
   def initialize(name:, index:, url:)
     @name = name

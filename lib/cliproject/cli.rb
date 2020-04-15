@@ -24,6 +24,9 @@ class Cli
     klasses.each.with_index(1) do |klass, index|
       puts "#{index}. #{klass.name}"
     end
+    puts "Please enter in the name of the class you would like to select"
+    @class_selection = gets.strip.downcase
+    Api.class_selection(@class_selection)
   end
   
 
