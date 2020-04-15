@@ -9,6 +9,6 @@ class Cli
     puts "Here are your options: Barbarian, Bard, Cleric, Druid, Fighter, Monk, Paladin,"
     puts "Ranger, Rogue, Sorcerer, Warlock, and Wizard! "
     @class_selection = gets.strip.downcase       #gets what the user inputs and saves it to the instance local_variables
-    Api.get_classy(@class_selection)
+    Api.get_classy(@class_selection) #make sure this is a valid input
   end
 end

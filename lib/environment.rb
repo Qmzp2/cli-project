@@ -1,6 +1,3 @@
-gem install pry
-gem install json
-gem install httparty
 
 require 'pry'
 require 'httparty' #class video from Wednesday said it put it as HTTParty but it didn't work that way when doing gem install HTTParty, this worked though
