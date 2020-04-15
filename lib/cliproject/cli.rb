@@ -10,11 +10,20 @@ class Cli
     stop = gets #Just to wait to hit enter
     #@class_selection = gets.strip.downcase       #gets what the user inputs and saves it to the instance local_variables
     Api.get_classy #make sure this is a valid input
+    print_classes(Classes.all)
+    
   end
   
   def return_klasses
     puts "The classes that you have to choose from as of this version are:"
     
+  end
+  
+  def print_classes(klasses)
+    puts "The following classes for this version are:"
+    klasses.each.with_index(1) do |klass, index|
+      puts "#{index}. #{klass.name}"
+    end
   end
   
 
