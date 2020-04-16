@@ -17,7 +17,9 @@ class Api
     Classes.all.each do |value|
       if value.class_id == chosen_class
         value.hit_die = hit_die
+        value.proficiencies = profs
         puts value.hit_die
+        puts value.proficiencies
       end
     end
     

@@ -34,13 +34,6 @@ class Classes
     @@all.each {|value| return value.class_id}
   end
   
- # def add_proficiencies(prof)
-  #  @proficiencies << prof unless @proficiencies.include?(prof)
- # end
-  
-  def add_hit_die(hit_die)
-    @hit_die = hit_die
-  end
-  
+
 
 end 
