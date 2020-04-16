@@ -1,12 +1,12 @@
 
 
 class Classes
-  attr_accessor :name, :index, :url, :hit_die, :proficiencies
+  attr_accessor :name, :class_id, :url, :hit_die, :proficiencies
   @@all = []
   
-  def initialize(name:, index:, url:)
+  def initialize(name:, class_id:, url:)
     @name = name
-    @index = index
+    @class_id = class_id
     @proficiencys = [] #this value is an array and thus must be created as an empty
     @url = url
     save
@@ -20,20 +20,13 @@ class Classes
     @@all
   end
   
-  def add_proficiencies(value)
-    @proficiencys << value unless @proficiencys.include?(value)
+  def self.find_by_name(name)
+    @@all.select {|c| c.name == name}
   end
   
-  def add_hit_die(value)
-    @hit_die = value
+  def self.find_by_classid(classid)
+    @@all.select {|c| c.class_id == classid}
   end
   
-  def seach_class_by_name(given_name)
-    self.all.find {|klass| klass.name == given_name}
-  end
-  
-  def add_information(hit_die, proficiencies) #adds hit die, proficiencie
-  @hit_die = hit_die
-  @proficiencies = proficiencies
-  end
+
 end 

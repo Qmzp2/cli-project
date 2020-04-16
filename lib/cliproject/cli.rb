@@ -8,18 +8,12 @@ class Cli
     puts " "
     puts "Press 'Enter' to begin!"
     stop = gets #Just to wait to hit enter
-    #@class_selection = gets.strip.downcase       #gets what the user inputs and saves it to the instance local_variables
     Api.get_classy #makes the objects of each klass
-    print_classes(Classes.all)
+    print_classes(Classes.all) #45.25 change later
     
   end
-  
-  def return_klasses
-    puts "The classes that you have to choose from as of this version are:"
-    
-  end
-  
-  def print_classes(klasses)
+
+  def print_classes(klasses) #this is pulling from Classes, but how? Line 12 argument
     puts "The following classes for this version are:"
     klasses.each.with_index(1) do |klass, index|
       puts "#{index}. #{klass.name}"
