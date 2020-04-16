@@ -1,8 +1,9 @@
 
 
 class Classes
-  attr_accessor :name, :index, :url, :hit_die, :proficiencys
+  attr_accessor :name, :index, :url, :hit_die, :proficiencies
   @@all = []
+  
   def initialize(name:, index:, url:)
     @name = name
     @index = index
@@ -18,19 +19,21 @@ class Classes
   def self.all
     @@all
   end
-
-  def self.find_by_klass(klass)
-    @@all.select {|c| c.name == klass}
-  end
   
-  def list_klasses
-    @@all.each {|c| puts c.name}
-  end
-  
-  def add_proficiencys(value)
+  def add_proficiencies(value)
     @proficiencys << value unless @proficiencys.include?(value)
   end
   
+  def add_hit_die(value)
+    @hit_die = value
+  end
   
-
+  def seach_class_by_name(given_name)
+    self.all.find {|klass| klass.name == given_name}
+  end
+  
+  def add_information(hit_die, proficiencies) #adds hit die, proficiencie
+  @hit_die = hit_die
+  @proficiencies = proficiencies
+  end
 end 
