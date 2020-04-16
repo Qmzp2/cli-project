@@ -7,7 +7,7 @@ class Classes
   def initialize(name:, class_id:, url:)
     @name = name
     @class_id = class_id
-    @proficiencys = [] #this value is an array and thus must be created as an empty
+    @proficiencies = [] #this value is an array and thus must be created as an empty
     @url = url
     save
   end
@@ -27,6 +27,13 @@ class Classes
   def self.find_by_classid(classid)
     @@all.select {|c| c.class_id == classid}
   end
+  
+  
+  def self.class_id
+    @@all.each {|value| return value.class_id}
+  end
+  
+  
   
 
 end 
