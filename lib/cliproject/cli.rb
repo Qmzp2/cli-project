@@ -9,7 +9,7 @@ class Cli
     puts "Press 'Enter' to begin!"
     stop = gets #Just to wait to hit enter
     #@class_selection = gets.strip.downcase       #gets what the user inputs and saves it to the instance local_variables
-    Api.get_classy #make sure this is a valid input
+    Api.get_classy #makes the objects of each klass
     print_classes(Classes.all)
     
   end
@@ -25,8 +25,8 @@ class Cli
       puts "#{index}. #{klass.name}"
     end
     puts "Please enter in the name of the class you would like to select"
-    @class_selection = gets.strip.downcase
-    Api.class_selection(@class_selection)
+    @class_selection = gets.strip.downcase #work in way to verify input
+    Api.add_class_details(@class_selection)
   end
   
 

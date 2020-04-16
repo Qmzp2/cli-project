@@ -10,8 +10,16 @@ class Api
   end
   
   def self.add_class_details(chosen_class)
-    url = url ="http://dnd5eapi.co/api/classes/#{chosen_class}/"
+    url ="http://dnd5eapi.co/api/classes/#{chosen_class}/"
     response = HTTParty.get(url)
-  
+    proficiencies = response.parsed_response["proficiencies"] #save this to the object's proficiencies value
+    hit_die = response.parsed_response["hit_die"] #save this to the object's hit die value
+    Classes.all.each do
+      if chosen_class == Classes.name
+        Classes.hit_die = hit_die
+      end
+      
+    binding.pry
+  end
 end
 end
