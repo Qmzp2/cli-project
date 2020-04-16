@@ -11,8 +11,9 @@ class Api
   def self.add_class_details(chosen_class)
     url ="http://dnd5eapi.co/api/classes/#{chosen_class}/"
     response = HTTParty.get(url)
-    proficiencies = response.parsed_response["proficiencies"] #save this to the object's proficiencies value
+    profs = response.parsed_response["proficiencies"].collect {|value| value["name"]}
+    
     hit_die = response.parsed_response["hit_die"] #save this to the object's hit die value
- binding.pry
+    binding.pry
 end 
 end
