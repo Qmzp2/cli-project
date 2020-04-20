@@ -10,6 +10,7 @@ class Cli
     stop = gets #Just to wait to hit enter
     Api.get_classy #makes the objects of each klass
     print_classes(Classes.all) #45.25 change later
+    prompt
   end
 
   def print_classes(klasses) #this is pulling from Classes, but how? Line 12 argument
@@ -22,9 +23,11 @@ class Cli
     Api.add_class_details(@class_selection)
   end
   
-  def prompt(input)
+  def prompt
     puts "What class would you like to see next?"
+    input = gets.strip.downcase
     Api.add_class_details(input)
+    prompt
   end
   
 
