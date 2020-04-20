@@ -22,10 +22,6 @@ class Api
         puts "The #{chosen_class} proficiencies are #{value.proficiencies.join(', ')}."
       end
     end
-    
-
-    
- 
   end 
 
 end
