@@ -2,14 +2,20 @@ HELLO WORLD
 
 # Cli::Project
 
-Hello and welcome to my  cli project. To begin you will need to install two gems: json and httparty. To install these, type 'gem install httparty' and 'gem install json'. After this, make sure youre in the correct directory by typing 'cd cli-project'. Lastly, to run the program type 'ruby bin/dnd'!
+Hello and welcome to my  cli project. To begin you will need to install three gems: json, colorize, and httparty. To install these, type 'gem install httparty', 'gem install colorize' and 'gem install json'. After this, make sure you're in the correct directory by typing 'cd cli-project'. Lastly, to run the program type 'ruby bin/dnd'!
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Run these lines to install the nessisary gem files:
 
 ```ruby
-gem 'cli-project'
+gem install json
+```
+```ruby
+gem install colorize
+```
+```ruby
+gem install httparty
 ```
 
 And then execute:
