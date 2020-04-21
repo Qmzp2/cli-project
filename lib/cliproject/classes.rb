@@ -22,13 +22,12 @@ class Classes
   end
   
   def self.find_by_name(name)
-    @@all.select {|c| c.name == name}
+    @@all.find {|c| c.name == name}
   end
   
   def self.find_by_classid(classid)
-    @@all.select {|c| c.class_id == classid}
+    @@all.find {|c| c.class_id == classid}
   end
-  
   
   def self.class_id
     @@all.each {|value| return value.class_id}
