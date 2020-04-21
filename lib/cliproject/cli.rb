@@ -1,7 +1,7 @@
 
 class Cli
   
-  def run #Oh boy, here we go! gl hf!
+  def run 
     puts " "
     puts "Greetings aspiring adventurer! Are you ready to begin your journey?" 
     puts "First we must choose the class that will dictate your skills and abilities!"
@@ -10,23 +10,27 @@ class Cli
     print "Enter".colorize(:blue)
     print " to begin!"
     stop = gets #Just to wait to hit enter
-    Api.get_classy #makes the objects of each klass
-    print_classes(Classes.all) #45.25 change later
+    Api.get_classy
+    print_classes(Classes.all)
     prompt
   end
 
-  def print_classes(klasses) #this is pulling from Classes, but how? Line 12 argument
+  def print_classes(klasses) 
     puts "The following classes for this version are:"
     klasses.each.with_index(1) do |klass, index|
       puts "#{index}. #{klass.name}"
     end
     puts "Please enter in the name of the class you would like to select"
-    class_selection = gets.strip.downcase #work in way to verify input
+    class_selection = gets.strip.downcase
+    Classes.all.each do |klass|
+      if klass.class_id == class_selection
     Api.add_class_details(class_selection)
   end
+end
+end
   
   def prompt
-    puts "What class would you like to see next?"
+    puts "Enter a class you would like to see."
     input = gets.strip.downcase
     Api.add_class_details(input)
     prompt

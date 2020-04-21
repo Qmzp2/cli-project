@@ -7,7 +7,7 @@ class Classes
   def initialize(name:, class_id:, url:)
     @name = name
     @class_id = class_id
-    @proficiencies = [] #this value is an array and thus must be created as an empty
+    @proficiencies = []
     @url = url
     @hit_die = hit_die
     save
