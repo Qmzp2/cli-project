@@ -18,17 +18,13 @@ gem install colorize
 gem install httparty
 ```
 
-And then execute:
+Lastly, make sure you're in the correct directory by typing:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install cli-project
+    $ cd cli-project
 
 ## Usage
 
-TODO: Write usage instructions here
+This Cli is to fetch information about the various dungeons and dragons classes and return information on any one of them including their names, hit die, and proficiencies.
 
 ## Development
 
