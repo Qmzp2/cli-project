@@ -21,8 +21,8 @@ class Cli
       puts "#{index}. #{klass.name}"
     end
     puts "Please enter in the name of the class you would like to select"
-    @class_selection = gets.strip.downcase #work in way to verify input
-    Api.add_class_details(@class_selection)
+    class_selection = gets.strip.downcase #work in way to verify input
+    Api.add_class_details(class_selection)
   end
   
   def prompt
