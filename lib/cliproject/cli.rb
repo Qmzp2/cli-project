@@ -29,12 +29,17 @@ class Cli
 end
 end
   
-  def prompt
+ def prompt
     puts "Enter a class you would like to see."
     input = gets.strip.downcase
+    if
+    Classes.all.any? { |value| value.class_id == input}
     Api.add_class_details(input)
-    prompt
+  else
+    puts "sorry that didn't work, ending"
+    #prompt
   end
+end
   
 
     
