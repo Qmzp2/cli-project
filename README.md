@@ -2,8 +2,6 @@ HELLO WORLD
 
 # Cli::Project
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/cli/project`. To experiment with that code, run `bin/console` for an interactive prompt.
-
 Hello and welcome to my  cli project. To begin you will need to install two gems: json and httparty. To install these, type 'gem install httparty' and 'gem install json'. After this, make sure youre in the correct directory by typing 'cd cli-project'. Lastly, to run the program type 'ruby bin/dnd'!
 
 ## Installation
