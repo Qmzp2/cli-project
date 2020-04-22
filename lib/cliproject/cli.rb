@@ -39,7 +39,7 @@ def prompt
     when 'list'
       print_classes(Classes.all)
     else
-    puts "Sorry that input didn't work."
+    puts "Sorry that input didn't work.".colorize(:red)
     prompt
   end
 end
