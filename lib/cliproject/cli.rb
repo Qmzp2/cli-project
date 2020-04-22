@@ -16,7 +16,7 @@ class Cli
   def print_classes(klasses) 
     puts "The following classes for this version are:"
     klasses.each.with_index(1) do |klass, index|
-      puts "#{index}. #{klass.name}"
+      puts "#{index}. #{klass.name.colorize(:red)}"
     end
     puts "Please enter in the name of the class you would like to select"
     class_selection = gets.strip.downcase
@@ -28,7 +28,7 @@ end
 end
   
  def prompt
-    puts "Enter a class you would like to see or type 'exit' to exit."
+    puts "Enter a class you would like to see or type" + " exit".colorize(:blue) + " to exit."
     input = gets.strip.downcase
     if
       input == "exit"
@@ -38,13 +38,13 @@ end
     Api.add_class_details(input)
     prompt
   else
-    puts "sorry that input didn't work."
+    puts "Sorry that input didn't work."
     prompt
   end
 end
 
 def farewell
-  puts "Good luck, have fun!"
+  puts "Good luck, have fun!".colorize(:yellow)
   exit
 end
   

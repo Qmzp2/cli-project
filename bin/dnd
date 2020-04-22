@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby #the whole shebang!
+#!/usr/bin/env ruby
 
 require_relative '../lib/environment'
 
