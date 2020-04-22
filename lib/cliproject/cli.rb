@@ -6,9 +6,7 @@ class Cli
     puts "Greetings aspiring adventurer! Are you ready to begin your journey?" 
     puts "First we must choose the class that will dictate your skills and abilities!"
     puts " "
-    print "Press " 
-    print "Enter".colorize(:blue)
-    print " to begin!"
+    print "Press " + "Enter".colorize(:blue) +" to begin!"
     stop = gets #Just to wait to hit enter
     Api.get_classy
     print_classes(Classes.all)
