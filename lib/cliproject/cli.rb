@@ -10,7 +10,6 @@ class Cli
     stop = gets
     Api.get_classy
     print_classes(Classes.all)
-    prompt
   end
 
   def print_classes(klasses) 
@@ -18,13 +17,7 @@ class Cli
     klasses.each.with_index(1) do |klass, index|
       puts "#{index}. #{klass.name.colorize(:red)}"
     end
-    puts "Please enter in the name of the class you would like to select"
-    class_selection = gets.strip.downcase
-    Classes.all.each do |klass|
-      if klass.class_id == class_selection
-    Api.add_class_details(class_selection)
-  end
-end
+    prompt
 end
   
  def prompt
