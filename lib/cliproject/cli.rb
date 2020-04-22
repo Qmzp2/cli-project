@@ -26,7 +26,8 @@ def farewell
 end
 
 def prompt
-  puts "Enter a class you would like to see or type" + " exit".colorize(:blue) + " to exit." #tell user they can type 'list' to see the list of classes again
+  puts "Enter a class you would like to see or type" + " exit".colorize(:blue) + " to exit or " + "list".colorize(:blue)
+  puts "to show the list of classes again."
   input = gets.strip.downcase
   if Classes.all.find { |value| value.class_id == input}
     Api.add_class_details(input)
