@@ -7,7 +7,7 @@ class Cli
     puts "First we must choose the class that will dictate your skills and abilities!"
     puts " "
     print "Press " + "Enter".colorize(:blue) +" to begin!"
-    stop = gets #Just to wait to hit enter
+    stop = gets
     Api.get_classy
     print_classes(Classes.all)
     prompt
@@ -28,7 +28,7 @@ end
 end
   
  def prompt
-    puts "Enter a class you would like to see."
+    puts "Enter a class you would like to see or type 'exit' to exit."
     input = gets.strip.downcase
     if
       input == "exit"
@@ -36,9 +36,10 @@ end
     elsif
     Classes.all.any? { |value| value.class_id == input}
     Api.add_class_details(input)
+    prompt
   else
-    puts "sorry that didn't work, ending"
-    #prompt
+    puts "sorry that input didn't work."
+    prompt
   end
 end
 
