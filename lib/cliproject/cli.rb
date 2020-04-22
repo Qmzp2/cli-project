@@ -19,28 +19,28 @@ class Cli
     end
     prompt
 end
-  
- def prompt
-    puts "Enter a class you would like to see or type" + " exit".colorize(:blue) + " to exit."
-    input = gets.strip.downcase
-    if
-      input == "exit"
-      farewell
-    elsif
-    Classes.all.any? { |value| value.class_id == input}
-    Api.add_class_details(input)
-    prompt
-  else
-    puts "Sorry that input didn't work."
-    prompt
-  end
-end
 
 def farewell
   puts "Good luck, have fun!".colorize(:yellow)
   exit
 end
-  
 
-    
+def prompt
+  puts "Enter a class you would like to see or type" + " exit".colorize(:blue) + " to exit." #tell user they can type 'list' to see the list of classes again
+  input = gets.strip.downcase
+  if Classes.all.find { |value| value.class_id == input}
+    Api.add_class_details(input)
+    prompt
+  else
+  case input
+  when 'exit'
+    farewell
+    when 'list'
+      print_classes(Classes.all)
+    else
+    puts "Sorry that input didn't work."
+    prompt
+  end
+end
+end
 end

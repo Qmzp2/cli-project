@@ -16,8 +16,8 @@ class Api
     
     Classes.all.each do |value|
       if value.class_id == chosen_class
-        value.hit_die = hit_die
-        value.proficiencies = profs
+      value.hit_die = hit_die
+       value.proficiencies = profs
         puts "The #{chosen_class} has a hit die of #{value.hit_die}.".colorize(:red)
         puts "The #{chosen_class} proficiencies are #{value.proficiencies.join(', ')}.".colorize(:red)
       end

@@ -1,7 +1,9 @@
 
 
 class Classes
-  attr_accessor :name, :class_id, :url, :hit_die, :proficiencies
+  attr_accessor :hit_die, :proficiencies
+  attr_reader :name, :class_id, :url
+  
   @@all = []
   
   def initialize(name:, class_id:, url:)
@@ -30,7 +32,7 @@ class Classes
   end
   
   def self.class_id
-    @@all.each {|value| return value.class_id}
+    @@all.each {|value| value.class_id}
   end
   
 
