@@ -31,12 +31,20 @@ end
     puts "Enter a class you would like to see."
     input = gets.strip.downcase
     if
+      input == "exit"
+      farewell
+    elsif
     Classes.all.any? { |value| value.class_id == input}
     Api.add_class_details(input)
   else
     puts "sorry that didn't work, ending"
     #prompt
   end
+end
+
+def farewell
+  puts "Good luck, have fun!"
+  exit
 end
   
 
